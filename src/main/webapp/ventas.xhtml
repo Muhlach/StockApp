@@ -1,0 +1,36 @@
+<f:view xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+	</h:head>
+	<h:body>
+		<center>
+			<h1 style="margin-top: 20px">CONTROL DE STOCK</h1>
+			<h:form>
+				<p:dataTable id="tablaListaVentas" var="venta"
+					value="#{VentasController.showVentas()}"
+					sortMode="multiple">
+					<f:facet name="header">VENTAS</f:facet>
+					<p:column headerText="Articulo" sortBy="#{venta.articulo}">
+						<h:outputText value="#{venta.articulo}" />
+					</p:column>
+					<p:column headerText="Tienda" sortBy="#{venta.tienda}">
+						<h:outputText value="#{venta.tienda}" />
+					</p:column>
+					<p:column headerText="Unidades" sortBy="#{venta.unidades}">
+						<h:outputText value="#{venta.unidades}" />
+					</p:column>
+					<p:column headerText="Precio total" sortBy="#{venta.precioTotal}">
+						<h:outputText value="#{venta.precioTotal}" />
+					</p:column>
+					<p:column headerText="Fecha" sortBy="#{venta.fecha}">
+						<h:outputText value="#{venta.fecha}" />
+					</p:column>
+				</p:dataTable>
+			</h:form>
+		</center>
+
+	</h:body>
+</f:view>
