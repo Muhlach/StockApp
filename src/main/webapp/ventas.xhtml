@@ -7,6 +7,20 @@
 	</h:head>
 	<h:body>
 		<center>
+		<p:toolbar>
+        <f:facet name="left">
+            <p:commandButton value="Nuevo Articulo" action="#{AddArticulo.showNuevoArticulo}"/>
+             <span class="ui-separator">
+                <span class="ui-icon ui-icon-grip-dotted-vertical" />
+            </span>
+            <p:commandButton value="Nueva Tienda" action="#{AddArticulo.showNuevaTienda}"/>
+ 
+            <span class="ui-separator">
+                <span class="ui-icon ui-icon-grip-dotted-vertical" />
+            </span>
+            <p:commandButton value="Nueva Venta" action="#{AddArticulo.showNuevaVenta}"/>
+        </f:facet>
+    </p:toolbar>
 			<h1 style="margin-top: 20px">CONTROL DE STOCK</h1>
 			<h:form>
 				<p:dataTable id="tablaListaVentas" var="venta"

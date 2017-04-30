@@ -6,4 +6,7 @@ import es.uniovi.asw.persistence.model.Tienda;
 
 public interface TiendaRepository extends JpaRepository<Tienda, Long>{
 
+
+	Tienda findByNombre(String tiendaNombre);
+
 }

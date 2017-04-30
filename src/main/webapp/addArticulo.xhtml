@@ -1,0 +1,46 @@
+<f:view xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+	</h:head>
+	<h:body>
+		<center>
+			<h1 style="margin-top: 20px">Control de Stock</h1>
+			<h:form style="margin-top: 50px">
+				<p:panel id="panel" header="Nuevo Articulo"
+					style="margin-bottom:10px; width:50%">
+					<h:panelGrid columns="3" cellpadding="5">
+						<h:outputLabel value="Nombre:"></h:outputLabel>
+						<p:inputText value="#{addArticulo.nombre}" required="true" requiredMessage="El titulo no puede estar vacio">
+						</p:inputText>
+						<br />
+						<br />
+						<h:outputLabel value="Descripcion:    "></h:outputLabel>
+						<p:inputTextarea rows="5" cols="30" counter="display"
+							value="#{addArticulo.descripcion}" maxlength="200"
+							counterTemplate="{0} caracteres disponibles." autoResize="false" 
+							required="true" requiredMessage="la descripcion no puede estar vacia"/>
+						<h:outputText id="display" />
+						<h:outputLabel value="Unidades:"></h:outputLabel>
+						<p:inputText value="#{addArticulo.unidades}" required="true" requiredMessage="Las unidades no pueden estar vacias">
+						</p:inputText>
+						<br />
+						<br />
+						<h:outputLabel value="Precio:"></h:outputLabel>
+						<p:inputText value="#{addArticulo.precio}" required="true" requiredMessage="El precio no puede estar vacio">
+						</p:inputText>
+						<br />
+					</h:panelGrid>
+					<p:messages id="message" showDetail="true" autoUpdate="true"
+						closable="true" />
+						<h:commandButton value="Cancel" action="#{addArticulo.cancel}" />
+					<h:commandButton value="Save" action="#{addArticulo.addArticulo}" />
+					<br />
+					
+				</p:panel>
+			</h:form>
+		</center>
+	</h:body>
+</f:view>

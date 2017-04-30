@@ -6,4 +6,7 @@ import es.uniovi.asw.persistence.model.Articulo;
 
 public interface ArticuloRepository extends JpaRepository<Articulo, Long>{
 
+
+	Articulo findByNombre(String articuloNombre);
+
 }

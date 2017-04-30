@@ -1,5 +1,7 @@
 package es.uniovi.asw.business.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +25,12 @@ public class TiendaServiceImpl implements TiendaService{
 	public void delete(Tienda tienda) {
 		factories.getPersistenceFactory().getTiendaRepository().delete(tienda);
 		
+	}
+
+	@Override
+	public List<Tienda> findAll() {
+		// TODO Auto-generated method stub
+		return factories.getPersistenceFactory().getTiendaRepository().findAll();
 	}
 
 }
