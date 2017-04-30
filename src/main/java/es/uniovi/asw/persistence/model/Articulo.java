@@ -77,6 +77,15 @@ public class Articulo implements Serializable{
 
 
 
+
+
+//	@Override
+//	public String toString() {
+//		return nombre;
+//	}
+
+
+
 	
 
 

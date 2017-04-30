@@ -29,6 +29,21 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>ventas.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{ProposalListController.goToAddView}</from-action>
+			<from-outcome>addView</from-outcome>
+			<to-view-id>/addProposal.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-action>#{VentasController.ventaSeleccionada(venta)}</from-action>
+			<from-outcome>goToView</from-outcome>
+			<to-view-id>/oneVentaView.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
 	
 	<navigation-rule>
 		<from-view-id>proposalList.xhtml</from-view-id>

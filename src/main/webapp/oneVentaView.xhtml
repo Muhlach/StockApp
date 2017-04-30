@@ -1,0 +1,34 @@
+<f:view xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+	<h:head>
+	</h:head>
+	<h:body>
+		<center>
+			<h:form>
+				<p:fieldset
+					style="margin:50px 50px 50px 50px; text-align: left; width:50%">
+					<h:panelGrid columns="2" cellpadding="5">
+						<h:outputText value="Articulo:" />
+						<h:outputText value="#{VentasController.articulo.getNombre()}"
+							style="margin-right:50px" />
+				
+						<h:outputText value="Tienda:" />
+						<h:outputText value="#{VentasController.tienda.getNombre()}" />
+		
+						<h:outputText value="Precio Total:" />
+						<h:outputText value="#{VentasController.precioTotal}" />
+
+						<h:outputText value="Fecha:" />
+						<h:outputText value="#{VentasController.date}" />
+		
+						<h:outputText value="Unidades:" />
+						<h:outputText value="#{VentasController.unidades}" />
+				
+					</h:panelGrid>
+				</p:fieldset>
+			</h:form>
+		</center>
+	</h:body>
+</f:view>

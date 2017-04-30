@@ -70,5 +70,10 @@ public class Tienda implements Serializable{
 		this.ventas = ventas;
 	}
 
+//	@Override
+//	public String toString() {
+//		return nombre;
+//	}
+
 
 }

@@ -11,13 +11,13 @@
 			<h:form>
 				<p:dataTable id="tablaListaVentas" var="venta"
 					value="#{VentasController.showVentas()}"
-					sortMode="multiple">
+					sortMode="multiple" style="text-align: center" >
 					<f:facet name="header">VENTAS</f:facet>
-					<p:column headerText="Articulo" sortBy="#{venta.articulo}">
-						<h:outputText value="#{venta.articulo}" />
+					<p:column headerText="Articulo" sortBy="#{venta.articulo.getNombre()}">
+						<h:outputText value="#{venta.articulo.getNombre()}" />
 					</p:column>
-					<p:column headerText="Tienda" sortBy="#{venta.tienda}">
-						<h:outputText value="#{venta.tienda}" />
+					<p:column headerText="Tienda" sortBy="#{venta.tienda.getNombre()}">
+						<h:outputText value="#{venta.tienda.getNombre()}" />
 					</p:column>
 					<p:column headerText="Unidades" sortBy="#{venta.unidades}">
 						<h:outputText value="#{venta.unidades}" />
@@ -27,6 +27,12 @@
 					</p:column>
 					<p:column headerText="Fecha" sortBy="#{venta.fecha}">
 						<h:outputText value="#{venta.fecha}" />
+					</p:column>
+					<p:column>
+						<p:commandButton id="btn_View" value="Ver Venta"
+							action="#{VentasController.ventaSeleccionada(venta)}"
+							update="tablaListaVentas">
+						</p:commandButton>
 					</p:column>
 				</p:dataTable>
 			</h:form>

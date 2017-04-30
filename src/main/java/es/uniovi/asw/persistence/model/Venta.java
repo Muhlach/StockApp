@@ -74,6 +74,7 @@ public class Venta implements Serializable{
 		return precioTotal;
 	}
 	public void setPrecioTotal(double precioTotal) {
+//		precioTotal=articulo.getPrecio()*unidades;
 		this.precioTotal = precioTotal;
 	}
 	public Date getFecha() {

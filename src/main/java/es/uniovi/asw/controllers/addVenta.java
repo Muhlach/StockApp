@@ -1,5 +1,6 @@
 package es.uniovi.asw.controllers;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -15,6 +16,7 @@ import es.uniovi.asw.persistence.model.Articulo;
 import es.uniovi.asw.persistence.model.Tienda;
 import es.uniovi.asw.persistence.model.Venta;
 import es.uniovi.asw.persistence.model.ss.Citizen;
+import es.uniovi.asw.persistence.model.ss.Proposal;
 
 @Component("VentasController")
 @Scope("session")
@@ -26,6 +28,9 @@ public class addVenta {
 	private int unidades;
 	private double precioTotal;
 	private Date date;
+	private List<String> articulosName=new ArrayList<String>();
+	private List<String> tiendasName=new ArrayList<String>();
+	private Venta ventaSeleccionada;
 	
 	@Autowired
 	private Factories factoria;
@@ -34,7 +39,23 @@ public class addVenta {
 	public void init() {
 		ventas= factoria.getServicesFactory().getVentaService().findAll();
 		citizen=(Citizen) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("user");
+		for (Venta venta : ventas) {
+			articulosName.add(venta.getArticulo().getNombre());
+			tiendasName.add(venta.getTienda().getNombre());
+			
+		}
 
+	}
+	public String ventaSeleccionada(Venta v)
+	{
+		ventaSeleccionada=v;
+		articulo=ventaSeleccionada.getArticulo();
+		tienda=ventaSeleccionada.getTienda();
+		unidades=ventaSeleccionada.getUnidades();
+		precioTotal=ventaSeleccionada.getPrecioTotal();
+		date=ventaSeleccionada.getFecha();
+		
+		return "goToView";
 	}
 	public List<Venta> showVentas()
 	{
@@ -94,6 +115,24 @@ public class addVenta {
 	}
 	public void setDate(Date date) {
 		this.date = date;
+	}
+	public List<String> getArticulosName() {
+		return articulosName;
+	}
+	public void setArticulosName(List<String> articulosName) {
+		this.articulosName = articulosName;
+	}
+	public List<String> getTiendasName() {
+		return tiendasName;
+	}
+	public void setTiendasName(List<String> tiendasName) {
+		this.tiendasName = tiendasName;
+	}
+	public Venta getVentaSeleccionada() {
+		return ventaSeleccionada;
+	}
+	public void setVentaSeleccionada(Venta ventaSeleccionada) {
+		this.ventaSeleccionada = ventaSeleccionada;
 	}
 
 }
