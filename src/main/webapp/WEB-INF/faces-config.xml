@@ -32,27 +32,27 @@
 	<navigation-rule>
 		<from-view-id>ventas.xhtml</from-view-id>
 		<navigation-case>
-			<from-action>#{addArticulo.showNuevaTienda}</from-action>
-			<from-outcome>success</from-outcome>
-			<to-view-id>/addArticulo.xhtml</to-view-id>
+			<from-action>#{VentasController.ventaSeleccionada(venta)}</from-action>
+			<from-outcome>goToView</from-outcome>
+			<to-view-id>/oneVentaView.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
-			<from-action>#{addArticulo.showNuevaTienda}</from-action>
-			<from-outcome>success</from-outcome>
-			<to-view-id>/addTienda.xhtml</to-view-id>
-			<redirect />
-		</navigation-case>
-		<navigation-case>
-			<from-action>#{addArticulo.showNuevaTienda}</from-action>
-			<from-outcome>success</from-outcome>
+			<from-action>#{VentasController.goToAddView}</from-action>
+			<from-outcome>addView</from-outcome>
 			<to-view-id>/addVenta.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
-			<from-action>#{VentasController.ventaSeleccionada(venta)}</from-action>
-			<from-outcome>goToView</from-outcome>
-			<to-view-id>/oneVentaView.xhtml</to-view-id>
+			<from-action>#{VentasController.goToAddView1}</from-action>
+			<from-outcome>addView</from-outcome>
+			<to-view-id>/addArticulo.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-action>#{VentasController.goToAddView2}</from-action>
+			<from-outcome>addView</from-outcome>
+			<to-view-id>/addTienda.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>

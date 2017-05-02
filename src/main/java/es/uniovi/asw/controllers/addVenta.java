@@ -46,6 +46,15 @@ public class addVenta {
 		}
 
 	}
+	public String goToAddView(){
+		return "addView";
+	}
+	public String goToAddView1(){
+		return "addView";
+	}
+	public String goToAddView2(){
+		return "addView";
+	}
 	public String ventaSeleccionada(Venta v)
 	{
 		ventaSeleccionada=v;

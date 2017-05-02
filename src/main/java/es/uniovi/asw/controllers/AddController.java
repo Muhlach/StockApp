@@ -43,6 +43,9 @@ public class AddController {
 		articulos= factoria.getServicesFactory().getArticuloService().findAll();
 		tiendas= factoria.getServicesFactory().getTiendaService().findAll();
 	}
+	public String goToAddView(){
+		return "addView";
+	}
 
 	public String addArticulo(){
 

@@ -7,27 +7,33 @@
 	</h:head>
 	<h:body>
 		<center>
-		<p:toolbar>
-        <f:facet name="left">
-            <p:commandButton value="Nuevo Articulo" action="#{AddArticulo.showNuevoArticulo}"/>
-             <span class="ui-separator">
-                <span class="ui-icon ui-icon-grip-dotted-vertical" />
-            </span>
-            <p:commandButton value="Nueva Tienda" action="#{AddArticulo.showNuevaTienda}"/>
- 
-            <span class="ui-separator">
-                <span class="ui-icon ui-icon-grip-dotted-vertical" />
-            </span>
-            <p:commandButton value="Nueva Venta" action="#{AddArticulo.showNuevaVenta}"/>
-        </f:facet>
-    </p:toolbar>
 			<h1 style="margin-top: 20px">CONTROL DE STOCK</h1>
 			<h:form>
+				<p:toolbar>
+					<f:facet name="left">
+						<p:commandButton id="btn_Add" value="Nuevo Articulo"
+							action="#{VentasController.goToAddView1}">
+						</p:commandButton>
+						<span class="ui-separator"> <span
+							class="ui-icon ui-icon-grip-dotted-vertical" />
+						</span>
+						<p:commandButton id="btn_Add1" value="Nueva tienda"
+							action="#{VentasController.goToAddView2}">
+						</p:commandButton>
+						<span class="ui-separator"> <span
+							class="ui-icon ui-icon-grip-dotted-vertical" />
+						</span>
+						<p:commandButton id="btn_Add2" value="Nueva venta"
+							action="#{VentasController.goToAddView}">
+						</p:commandButton>
+					</f:facet>
+				</p:toolbar>
 				<p:dataTable id="tablaListaVentas" var="venta"
-					value="#{VentasController.showVentas()}"
-					sortMode="multiple" style="text-align: center" >
+					value="#{VentasController.showVentas()}" sortMode="multiple"
+					style="text-align: center">
 					<f:facet name="header">VENTAS</f:facet>
-					<p:column headerText="Articulo" sortBy="#{venta.articulo.getNombre()}">
+					<p:column headerText="Articulo"
+						sortBy="#{venta.articulo.getNombre()}">
 						<h:outputText value="#{venta.articulo.getNombre()}" />
 					</p:column>
 					<p:column headerText="Tienda" sortBy="#{venta.tienda.getNombre()}">
